@@ -9,6 +9,11 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     // позволяет работать с пакетами которые используют common js как с обчными пакетами с помощью import (require() module.export) = common js
     "esModuleInterop": true,
     // если какая то библиотека не имеет default export лоадеры автоматиче6ски создают их
