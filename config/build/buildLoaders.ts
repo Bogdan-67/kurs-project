@@ -19,6 +19,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 presets: ['@babel/preset-env'],
                 plugins: [
                     isDev && require.resolve('react-refresh/babel'),
+                    [
+                        'i18next-extract',
+                        { locales: ['ru', 'en'], keyAsDefaultValue: true },
+                    ],
                 ].filter(Boolean),
             },
         },
