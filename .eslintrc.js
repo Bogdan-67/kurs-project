@@ -49,6 +49,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'react/require-default-props': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'no-useless-escape': 'off',
     },
     globals: {
         __IS_DEV__: true,
