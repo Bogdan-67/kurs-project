@@ -52,6 +52,7 @@ module.exports = {
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'no-useless-escape': 'off',
         'max-len': ['error', { ignoreComments: true }],
+        'react/jsx-no-useless-fragment': 'off',
     },
     globals: {
         __IS_DEV__: true,
