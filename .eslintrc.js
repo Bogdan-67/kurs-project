@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'eslint:recommended',
@@ -50,6 +51,7 @@ module.exports = {
         'react/require-default-props': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'no-useless-escape': 'off',
+        'max-len': ['error', { ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
