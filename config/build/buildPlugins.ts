@@ -23,6 +23,6 @@ export function buildPlugins({
         }),
         isDev && new webpack.HotModuleReplacementPlugin(),
         isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
-        new BundleAnalyzerPlugin({ openAnalyzer: false }),
+        isDev && new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ].filter(Boolean);
 }
