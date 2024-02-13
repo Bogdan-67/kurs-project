@@ -4,8 +4,10 @@ import cls from './Button.module.scss';
 
 export enum ButtonTheme {
     CLEAR = 'clear',
+    CLEAR_INVERTED = 'clearInverted',
     PRIMARY = 'primary',
     OUTLINE = 'outline',
+    OUTLINE_INVERTED = 'outlineInverted',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
 }
@@ -29,7 +31,7 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         theme = ButtonTheme.CLEAR,
         square,
-        size = ButtonSize.L,
+        size = ButtonSize.M,
         ...otherProps
     } = props;
 

@@ -1,5 +1,19 @@
 {
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit": {
+    "": "",
+    " Aliquam lectus risus, finibus ornare vestibulum et, feugiat quis dui": {
+      "": "",
+      " Vivamus sit amet dolor et magna facilisis rhoncus": {
+        " Curabitur maximus est sed porta scelerisque": {
+          " Sed suscipit, arcu volutpat feugiat posuere, eros nisi tristique nibh, mollis vehicula lectus tortor eu purus": {
+            "": ""
+          }
+        }
+      }
+    }
+  },
   "throw error": "throw error",
+  "Войти": "Войти",
   "Главная": "Главная",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
