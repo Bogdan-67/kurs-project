@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
@@ -9,6 +9,10 @@ import { PageError } from 'widgets/PageError';
 
 const App = () => {
     const { theme } = useTheme();
+
+    useEffect(() => {
+        document.documentElement.dataset.theme = theme;
+    }, [theme]);
 
     return (
         <div className={classNames('app', {}, [theme])}>

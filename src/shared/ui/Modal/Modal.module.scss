@@ -8,17 +8,6 @@
     transition: 0.3s opacity;
     pointer-events: none;
     z-index: -1;
-    color: var(--primary-color);
-}
-
-.modal.light {
-    --bg-color: #eaeaea;
-    --primary-color: #003af3;
-}
-
-.modal.dark {
-    --bg-color: #262626;
-    --primary-color: #fff;
 }
 
 .overlay {

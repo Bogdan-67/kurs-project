@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
@@ -24,6 +24,12 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         }),
         [theme],
     );
+
+    useEffect(() => {
+        if (!document.documentElement.dataset.theme) {
+            document.documentElement.dataset.theme = initialTheme;
+        }
+    }, [initialTheme]);
 
     return (
         <ThemeContext.Provider value={defaultProps}>
