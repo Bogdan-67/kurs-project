@@ -29,6 +29,12 @@ module.exports = {
                 'max-len': 'off',
             },
         },
+        {
+            files: ['**/json-server/index.js'],
+            rules: {
+                '@typescript-eslint/no-var-requires': 'off',
+            },
+        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
