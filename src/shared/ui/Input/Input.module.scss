@@ -1,0 +1,48 @@
+.container {
+    position: relative;
+}
+
+.input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: 0.2s ease;
+    background: var(--secondary-bg-color);
+    color: gray;
+
+    &:focus {
+        outline: var(--primary-color) solid 1px;
+        color: var(--inverted-bg-color);
+        transition: 0.2s ease;
+    }
+}
+
+.placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: gray;
+    padding: 6px 11px;
+    transition: 0.2s ease;
+    pointer-events: none;
+
+    &.focused {
+        padding: 0 0 0 8px;
+        line-height: 0;
+        font-size: calc(var(--font-size-m) / 1.5);
+    }
+}
+
+.sep {
+    height: 1px;
+    background: var(--secondary-bg-color);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transition: 0.2s ease;
+
+    &.focused {
+        height: 2px;
+        top: -1px;
+    }
+}

@@ -1,8 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { PageError } from 'widgets/PageError';
+import { ErrorBoundary } from 'shared/ui/ErrorBoundary';
+import { LoginModal } from 'widgets/LoginModal';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -13,8 +15,12 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
+    }, []);
+
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
     }, []);
 
     return (
@@ -22,13 +28,13 @@ export const Navbar = ({ className }: NavbarProps) => {
             <Button
                 theme={ButtonTheme.OUTLINE_INVERTED}
                 className={cls.links}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 {t('Войти')}
             </Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                {t('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')}
-            </Modal>
+            <ErrorBoundary fallback={<PageError />}>
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            </ErrorBoundary>
         </div>
     );
 };

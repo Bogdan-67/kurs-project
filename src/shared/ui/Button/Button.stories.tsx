@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { CenterDecorator } from 'shared/config/storybook/CenterDecorator';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 import 'app/styles/index.scss';
 
@@ -23,6 +24,7 @@ export const Clear: Story = {
         children: 'Button',
         theme: ButtonTheme.CLEAR,
     },
+    decorators: [CenterDecorator],
 };
 
 export const ClearInverted: Story = {
@@ -30,6 +32,7 @@ export const ClearInverted: Story = {
         children: 'Button',
         theme: ButtonTheme.CLEAR_INVERTED,
     },
+    decorators: [CenterDecorator],
 };
 
 export const Outline: Story = {
@@ -37,6 +40,7 @@ export const Outline: Story = {
         children: 'Button',
         theme: ButtonTheme.OUTLINE,
     },
+    decorators: [CenterDecorator],
 };
 
 export const OutlineInverted: Story = {
@@ -44,6 +48,7 @@ export const OutlineInverted: Story = {
         children: 'Button',
         theme: ButtonTheme.OUTLINE_INVERTED,
     },
+    decorators: [CenterDecorator],
 };
 
 export const Primary: Story = {
@@ -51,6 +56,7 @@ export const Primary: Story = {
         children: 'Button',
         theme: ButtonTheme.PRIMARY,
     },
+    decorators: [CenterDecorator],
 };
 
 export const Background: Story = {
@@ -58,6 +64,7 @@ export const Background: Story = {
         children: 'Button',
         theme: ButtonTheme.BACKGROUND,
     },
+    decorators: [CenterDecorator],
 };
 
 export const BackgroundInverted: Story = {
@@ -65,6 +72,7 @@ export const BackgroundInverted: Story = {
         children: 'Button',
         theme: ButtonTheme.BACKGROUND_INVERTED,
     },
+    decorators: [CenterDecorator],
 };
 
 export const Square: Story = {
@@ -73,6 +81,7 @@ export const Square: Story = {
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
     },
+    decorators: [CenterDecorator],
 };
 
 export const SquareSizeM: Story = {
@@ -82,6 +91,7 @@ export const SquareSizeM: Story = {
         square: true,
         size: ButtonSize.M,
     },
+    decorators: [CenterDecorator],
 };
 
 export const SquareSizeL: Story = {
@@ -91,6 +101,7 @@ export const SquareSizeL: Story = {
         square: true,
         size: ButtonSize.L,
     },
+    decorators: [CenterDecorator],
 };
 
 export const SquareSizeXL: Story = {
@@ -100,6 +111,7 @@ export const SquareSizeXL: Story = {
         square: true,
         size: ButtonSize.XL,
     },
+    decorators: [CenterDecorator],
 };
 
 export const SizeM: Story = {
@@ -108,6 +120,7 @@ export const SizeM: Story = {
         theme: ButtonTheme.PRIMARY,
         size: ButtonSize.M,
     },
+    decorators: [CenterDecorator],
 };
 
 export const SizeL: Story = {
@@ -116,6 +129,7 @@ export const SizeL: Story = {
         theme: ButtonTheme.PRIMARY,
         size: ButtonSize.L,
     },
+    decorators: [CenterDecorator],
 };
 
 export const SizeXL: Story = {
@@ -124,6 +138,7 @@ export const SizeXL: Story = {
         theme: ButtonTheme.PRIMARY,
         size: ButtonSize.XL,
     },
+    decorators: [CenterDecorator],
 };
 
 export const ClearDark: Story = {
@@ -131,7 +146,7 @@ export const ClearDark: Story = {
         children: 'Button',
         theme: ButtonTheme.CLEAR,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
 export const OutlineDark: Story = {
@@ -139,7 +154,7 @@ export const OutlineDark: Story = {
         children: 'Button',
         theme: ButtonTheme.OUTLINE,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
 export const PrimaryDark: Story = {
@@ -147,7 +162,7 @@ export const PrimaryDark: Story = {
         children: 'Button',
         theme: ButtonTheme.PRIMARY,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
 export const BackgroundDark: Story = {
@@ -155,7 +170,7 @@ export const BackgroundDark: Story = {
         children: 'Button',
         theme: ButtonTheme.BACKGROUND,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
 
 export const SquareDark: Story = {
@@ -164,5 +179,5 @@ export const SquareDark: Story = {
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
