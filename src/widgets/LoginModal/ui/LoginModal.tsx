@@ -3,7 +3,6 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { ErrorBoundary } from 'shared/ui/ErrorBoundary';
 import { PageError } from 'widgets/PageError';
 import { LoginForm } from 'features/AuthByUsername';
-import cls from './LoginModal.module.scss';
 
 interface LoginModalProps {
     className?: string;
@@ -14,7 +13,7 @@ interface LoginModalProps {
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
     return (
         <Modal
-            className={classNames(cls.loginModal, {}, [className])}
+            className={classNames('', {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
             lazy
