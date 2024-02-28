@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, FC } from 'react';
+import { Loader } from 'shared/ui/Loader/Loader';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -23,6 +24,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
+    disabled?: boolean;
+    loading?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -32,11 +35,14 @@ export const Button: FC<ButtonProps> = (props) => {
         theme = ButtonTheme.CLEAR,
         square,
         size = ButtonSize.M,
+        disabled = false,
+        loading = false,
         ...otherProps
     } = props;
 
     const mods: Record<string, boolean> = {
         [cls.square]: square,
+        [cls.disabled]: disabled,
     };
 
     return (
@@ -47,9 +53,10 @@ export const Button: FC<ButtonProps> = (props) => {
                 cls[theme],
                 cls[size],
             ])}
+            disabled={disabled}
             {...otherProps}
         >
-            {children}
+            {loading ? <Loader /> : children}
         </button>
     );
 };

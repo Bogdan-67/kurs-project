@@ -181,3 +181,37 @@ export const SquareDark: Story = {
     },
     decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
 };
+
+export const Disabled: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
+    },
+    decorators: [CenterDecorator],
+};
+
+export const DisabledDark: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
+    },
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
+
+export const Loading: Story = {
+    args: {
+        children: 'Button',
+        loading: true,
+        theme: ButtonTheme.PRIMARY,
+    },
+    decorators: [CenterDecorator],
+};
+
+export const LoadingDark: Story = {
+    args: {
+        children: 'Button',
+        loading: true,
+        theme: ButtonTheme.PRIMARY,
+    },
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
