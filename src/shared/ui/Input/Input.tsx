@@ -54,10 +54,12 @@ export const Input = memo((props: InputProps) => {
     };
 
     useEffect(() => {
-        if (placeholderRef.current) {
-            setWidth(placeholderRef.current.offsetWidth - 2);
+        if (isFocused && placeholderRef.current) {
+            setTimeout(() => {
+                setWidth(placeholderRef.current.offsetWidth - 3);
+            }, 120);
         }
-    }, [placeholderRef]);
+    }, [placeholderRef, isFocused]);
 
     return (
         <div className={cls.container}>
