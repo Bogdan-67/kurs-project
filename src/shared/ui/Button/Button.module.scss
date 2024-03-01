@@ -2,6 +2,9 @@
     cursor: pointer;
     color: var(--primary-color);
     padding: 10px 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .clear,

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC } from 'react';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { ButtonHTMLAttributes, FC, useRef } from 'react';
+import { Loader, LoaderSize, LoaderTheme } from 'shared/ui/Loader/Loader';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -29,10 +29,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<ButtonProps> = (props) => {
+    const buttonRef = useRef<HTMLButtonElement>();
     const {
         className,
         children,
-        theme = ButtonTheme.CLEAR,
+        theme = ButtonTheme.PRIMARY,
         square,
         size = ButtonSize.M,
         disabled = false,
@@ -45,8 +46,23 @@ export const Button: FC<ButtonProps> = (props) => {
         [cls.disabled]: disabled,
     };
 
+    let loaderTheme;
+
+    if (theme === ButtonTheme.OUTLINE) {
+        loaderTheme = LoaderTheme.PRIMARY;
+    } else if (theme === ButtonTheme.CLEAR) {
+        loaderTheme = LoaderTheme.INVERTED_BACKGROUND;
+    } else {
+        loaderTheme = LoaderTheme.BACKGROUND;
+    }
+
     return (
         <button
+            ref={buttonRef}
+            style={{
+                minWidth: buttonRef.current?.offsetWidth || undefined,
+                minHeight: buttonRef.current?.offsetHeight || undefined,
+            }}
             type="button"
             className={classNames(cls.button, mods, [
                 className,
@@ -56,7 +72,11 @@ export const Button: FC<ButtonProps> = (props) => {
             disabled={disabled}
             {...otherProps}
         >
-            {loading ? <Loader /> : children}
+            {loading ? (
+                <Loader size={LoaderSize.S} theme={loaderTheme} />
+            ) : (
+                children
+            )}
         </button>
     );
 };

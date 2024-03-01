@@ -1,5 +1,4 @@
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-
 import type { Decorator } from '@storybook/react';
 import { DeepPartial } from '@reduxjs/toolkit';
 

@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Loader } from './Loader';
+import { CenterDecorator } from 'shared/config/storybook/CenterDecorator';
+import { Loader, LoaderSize, LoaderTheme } from './Loader';
 
 const meta: Meta<typeof Loader> = {
     title: 'shared/Loader',
@@ -11,6 +12,7 @@ const meta: Meta<typeof Loader> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
+    decorators: [CenterDecorator],
 };
 
 export default meta;
@@ -22,5 +24,35 @@ export const Light: Story = {
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [CenterDecorator, ThemeDecorator(Theme.DARK)],
+};
+
+export const Primary: Story = {
+    args: {
+        theme: LoaderTheme.PRIMARY,
+    },
+};
+
+export const SizeS: Story = {
+    args: {
+        size: LoaderSize.S,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        size: LoaderSize.M,
+    },
+};
+
+export const SizeL: Story = {
+    args: {
+        size: LoaderSize.L,
+    },
+};
+
+export const SizeXL: Story = {
+    args: {
+        size: LoaderSize.XL,
+    },
 };

@@ -207,6 +207,15 @@ export const Loading: Story = {
     decorators: [CenterDecorator],
 };
 
+export const LoadingOutline: Story = {
+    args: {
+        children: 'Button',
+        loading: true,
+        theme: ButtonTheme.OUTLINE,
+    },
+    decorators: [CenterDecorator],
+};
+
 export const LoadingDark: Story = {
     args: {
         children: 'Button',
