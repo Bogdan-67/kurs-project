@@ -54,9 +54,11 @@ export const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            <ErrorBoundary fallback={<PageError />}>
-                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-            </ErrorBoundary>
+            {isAuthModal && (
+                <ErrorBoundary fallback={<PageError />}>
+                    <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+                </ErrorBoundary>
+            )}
         </div>
     );
 };

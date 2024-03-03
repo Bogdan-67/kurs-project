@@ -3,6 +3,8 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { ErrorBoundary } from 'shared/ui/ErrorBoundary';
 import { PageError } from 'widgets/PageError';
 import { LoginForm } from 'features/AuthByUsername';
+import { Suspense } from 'react';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 interface LoginModalProps {
     className?: string;
@@ -19,7 +21,9 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
             lazy
         >
             <ErrorBoundary fallback={<PageError />}>
-                <LoginForm />
+                <Suspense fallback={<Loader />}>
+                    <LoginForm />
+                </Suspense>
             </ErrorBoundary>
         </Modal>
     );
