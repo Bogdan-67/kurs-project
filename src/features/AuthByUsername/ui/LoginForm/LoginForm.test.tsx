@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 
 describe('LoginForm.test', () => {
     test('render', () => {
-        componentRender(<LoginForm />);
+        componentRender(<LoginForm onSuccess={jest.fn} />);
         expect(screen.getByTestId('loginForm')).toBeInTheDocument();
     });
 });

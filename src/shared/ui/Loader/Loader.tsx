@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import cls from './Loader.module.scss';
 
 export enum LoaderTheme {
@@ -20,7 +21,7 @@ interface LoaderProps {
     size?: LoaderSize;
 }
 
-export const Loader = (props: LoaderProps) => {
+export const Loader = memo((props: LoaderProps) => {
     const {
         className,
         theme = LoaderTheme.INVERTED_BACKGROUND,
@@ -38,4 +39,4 @@ export const Loader = (props: LoaderProps) => {
             ])}
         />
     );
-};
+});

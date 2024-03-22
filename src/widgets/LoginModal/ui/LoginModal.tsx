@@ -3,7 +3,7 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { ErrorBoundary } from 'shared/ui/ErrorBoundary';
 import { PageError } from 'widgets/PageError';
 import { LoginForm } from 'features/AuthByUsername';
-import { Suspense } from 'react';
+import { memo, Suspense } from 'react';
 import { Loader } from 'shared/ui/Loader/Loader';
 
 interface LoginModalProps {
@@ -12,19 +12,21 @@ interface LoginModalProps {
     onClose: () => void;
 }
 
-export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
-    return (
-        <Modal
-            className={classNames('', {}, [className])}
-            isOpen={isOpen}
-            onClose={onClose}
-            lazy
-        >
-            <ErrorBoundary fallback={<PageError />}>
-                <Suspense fallback={<Loader />}>
-                    <LoginForm onSuccess={onClose} />
-                </Suspense>
-            </ErrorBoundary>
-        </Modal>
-    );
-};
+export const LoginModal = memo(
+    ({ className, isOpen, onClose }: LoginModalProps) => {
+        return (
+            <Modal
+                className={classNames('', {}, [className])}
+                isOpen={isOpen}
+                onClose={onClose}
+                lazy
+            >
+                <ErrorBoundary fallback={<PageError />}>
+                    <Suspense fallback={<Loader />}>
+                        <LoginForm onSuccess={onClose} />
+                    </Suspense>
+                </ErrorBoundary>
+            </Modal>
+        );
+    },
+);

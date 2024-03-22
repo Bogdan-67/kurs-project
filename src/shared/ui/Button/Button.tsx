@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC, useRef } from 'react';
+import { ButtonHTMLAttributes, memo, ReactNode, useRef } from 'react';
 import { Loader, LoaderSize, LoaderTheme } from 'shared/ui/Loader/Loader';
 import cls from './Button.module.scss';
 
@@ -26,9 +26,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
     disabled?: boolean;
     loading?: boolean;
+    children?: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = memo((props: ButtonProps) => {
     const buttonRef = useRef<HTMLButtonElement>();
     const {
         className,
@@ -79,4 +80,4 @@ export const Button: FC<ButtonProps> = (props) => {
             )}
         </button>
     );
-};
+});
