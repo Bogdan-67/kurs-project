@@ -22,7 +22,7 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
         >
             <ErrorBoundary fallback={<PageError />}>
                 <Suspense fallback={<Loader />}>
-                    <LoginForm />
+                    <LoginForm onSuccess={onClose} />
                 </Suspense>
             </ErrorBoundary>
         </Modal>
