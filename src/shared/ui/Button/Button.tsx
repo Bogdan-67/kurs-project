@@ -61,8 +61,8 @@ export const Button = memo((props: ButtonProps) => {
         <button
             ref={buttonRef}
             style={{
-                minWidth: buttonRef.current?.offsetWidth || undefined,
-                minHeight: buttonRef.current?.offsetHeight || undefined,
+                minWidth: (buttonRef.current?.offsetWidth || undefined) && 0,
+                minHeight: (buttonRef.current?.offsetHeight || undefined) && 0,
             }}
             type="button"
             className={classNames(cls.button, mods, [
