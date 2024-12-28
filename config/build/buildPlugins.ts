@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import webpack, { WebpackPluginInstance } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
@@ -26,5 +26,5 @@ export function buildPlugins({
         isDev && new webpack.HotModuleReplacementPlugin(),
         isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
         isDev && new BundleAnalyzerPlugin({ openAnalyzer: false }),
-    ].filter(Boolean);
+    ].filter(Boolean) as WebpackPluginInstance[];
 }

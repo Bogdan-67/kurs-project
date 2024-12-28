@@ -1,6 +1,6 @@
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import type { Decorator } from '@storybook/react';
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
 

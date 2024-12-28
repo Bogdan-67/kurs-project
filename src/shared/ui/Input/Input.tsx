@@ -3,6 +3,7 @@ import {
     ChangeEvent,
     InputHTMLAttributes,
     memo,
+    MutableRefObject,
     useEffect,
     useRef,
     useState,
@@ -30,8 +31,8 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         ...otherProps
     } = props;
-    const ref = useRef<HTMLInputElement>();
-    const placeholderRef = useRef<HTMLSpanElement>();
+    const ref = useRef() as MutableRefObject<HTMLInputElement>;
+    const placeholderRef = useRef() as MutableRefObject<HTMLSpanElement>;
     const [isFocused, setIsFocused] = useState(autoFocus);
     const [width, setWidth] = useState(0);
 

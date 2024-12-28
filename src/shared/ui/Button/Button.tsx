@@ -1,5 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, memo, ReactNode, useRef } from 'react';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import {
+    ButtonHTMLAttributes,
+    memo,
+    MutableRefObject,
+    ReactNode,
+    useRef,
+} from 'react';
 import { Loader, LoaderSize, LoaderTheme } from 'shared/ui/Loader/Loader';
 import cls from './Button.module.scss';
 
@@ -30,7 +36,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo((props: ButtonProps) => {
-    const buttonRef = useRef<HTMLButtonElement>();
+    const buttonRef = useRef() as MutableRefObject<HTMLButtonElement>;
     const {
         className,
         children,
@@ -42,7 +48,7 @@ export const Button = memo((props: ButtonProps) => {
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled,
     };

@@ -25,7 +25,7 @@ export const Light: Story = {
         isOpen: true,
         container:
             document.getElementById('root') ??
-            document.getElementById('storybook-root'),
+            (document.getElementById('storybook-root') as HTMLElement),
     },
 };
 
@@ -36,7 +36,7 @@ export const Dark: Story = {
         isOpen: true,
         container:
             document.getElementById('root') ??
-            document.getElementById('storybook-root'),
+            (document.getElementById('storybook-root') as HTMLElement),
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -73,6 +73,8 @@ module.exports = {
         'no-param-reassign': 'off',
         'jsx-a11y/no-autofocus': 'off',
         '@typescript-eslint/no-explicit-any': 'warn',
+        'no-undef': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
     },
     globals: {
         __IS_DEV__: true,
