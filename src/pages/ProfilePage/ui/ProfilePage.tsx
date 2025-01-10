@@ -21,9 +21,9 @@ import { useSelector } from 'react-redux';
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 // import cls from './ProfilePage.module.scss';
 

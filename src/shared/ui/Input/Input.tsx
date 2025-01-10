@@ -57,12 +57,12 @@ export const Input = memo((props: InputProps) => {
     };
 
     useEffect(() => {
-        if (isFocused && placeholderRef.current) {
+        if ((isFocused && placeholderRef.current) || value) {
             setTimeout(() => {
                 setWidth(placeholderRef.current.offsetWidth - 3);
             }, 120);
         }
-    }, [placeholderRef, isFocused]);
+    }, [placeholderRef, isFocused, props]);
 
     return (
         <div className={cls.container}>
@@ -83,7 +83,7 @@ export const Input = memo((props: InputProps) => {
                 <>
                     <span
                         style={{
-                            width: isFocused || value ? width : 0,
+                            width: width,
                         }}
                         className={classNames(cls.sep, {
                             [cls.focused]: isFocused || value,
