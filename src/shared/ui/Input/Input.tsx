@@ -83,7 +83,7 @@ export const Input = memo((props: InputProps) => {
                 <>
                     <span
                         style={{
-                            width: width,
+                            width: isFocused || value ? width : 0,
                         }}
                         className={classNames(cls.sep, {
                             [cls.focused]: isFocused || value,
