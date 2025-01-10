@@ -59,7 +59,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     const onChangeAge = useCallback(
         (value?: string) => {
-            dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+            if (value && /^\d+$/.test(value))
+                dispatch(
+                    profileActions.updateProfile({ age: Number(value || 0) }),
+                );
         },
         [dispatch],
     );
