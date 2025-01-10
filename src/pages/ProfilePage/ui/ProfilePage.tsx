@@ -18,8 +18,9 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
 import { Currency } from 'entities/Currency';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Country } from 'entities/Country';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import cls from './ProfilePage.module.scss';
 
 // import cls from './ProfilePage.module.scss';
 
@@ -104,7 +105,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
+            <div className={classNames(cls.wrapper, {}, [className])}>
                 <ProfilePageHeader />
                 <ProfileCard
                     data={formData}
