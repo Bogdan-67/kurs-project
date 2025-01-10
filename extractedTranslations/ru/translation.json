@@ -1,6 +1,14 @@
 {
+  "": "",
   "+": "+",
   "-": "-",
+  "Age": "Age",
+  "Avatar": "Avatar",
+  "Avatar link": "Avatar link",
+  "City": "City",
+  "Country": "Country",
+  "Currency": "Currency",
+  "Error": "Error",
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit": {
     "": "",
     " Aliquam lectus risus, finibus ornare vestibulum et, feugiat quis dui": {
@@ -14,6 +22,14 @@
       }
     }
   },
+  "Name": "Name",
+  "ProfileError": "ProfileError",
+  "Surname": "Surname",
+  "Username": "Username",
+  "Your age": "Your age",
+  "Your city": "Your city",
+  "Your name": "Your name",
+  "Your surname": "Your surname",
   "throw error": "throw error",
   "Авторизация": "Авторизация",
   "Ваша фамилия": "Ваша фамилия",
@@ -24,13 +40,16 @@
   "Главная страница": "Главная страница",
   "Имя пользователя": "Имя пользователя",
   "О сайте": "О сайте",
+  "Отменить": "Отменить",
   "Ошибка": "Ошибка",
+  "Ошибка при загрузке профиля": "Ошибка при загрузке профиля",
   "Пароль": "Пароль",
   "Перезагрузить страницу": "Перезагрузить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Профиль": "Профиль",
   "Раскрыть": "Раскрыть",
   "Редактировать": "Редактировать",
+  "Сохранить": "Сохранить",
   "Страница не найдена": "Страница не найдена",
   "Язык": "Язык"
 }

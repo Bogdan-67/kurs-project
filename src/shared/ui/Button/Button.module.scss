@@ -1,7 +1,7 @@
 .button {
     cursor: pointer;
     color: var(--primary-color);
-    padding: 10px 15px;
+    padding: 7px 15px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +24,13 @@
     border: 1px solid var(--primary-color);
     background: none;
     color: var(--primary-color);
+    border-radius: 100px;
+}
+
+.outline_red {
+    border: 1px solid var(--red-dark);
+    background: none;
+    color: var(--red-dark);
     border-radius: 100px;
 }
 

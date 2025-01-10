@@ -17,8 +17,9 @@ type HTMLInputProps = Omit<
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
+    readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -29,6 +30,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         autoFocus = false,
         placeholder,
+        readonly,
         ...otherProps
     } = props;
     const ref = useRef() as MutableRefObject<HTMLInputElement>;
@@ -65,13 +67,16 @@ export const Input = memo((props: InputProps) => {
     return (
         <div className={cls.container}>
             <input
-                className={classNames(cls.input, {}, [className])}
+                className={classNames(cls.input, { [cls.readonly]: readonly }, [
+                    className,
+                ])}
                 ref={ref}
                 type={type}
                 value={value}
                 onChange={onChangeHandler}
                 onFocus={onFocusHandler}
                 onBlur={onBlurHandler}
+                readOnly={readonly}
                 {...otherProps}
             />
             {placeholder && (

@@ -37,6 +37,16 @@ export const Filled: Story = {
     decorators: [CenterDecorator],
 };
 
+export const ReadOnly: Story = {
+    args: {
+        placeholder: 'Введите текст',
+        value: '1234',
+        onChange: (value) => {},
+        readonly: true,
+    },
+    decorators: [CenterDecorator],
+};
+
 export const Dark: Story = {
     args: {
         placeholder: 'Введите текст',
