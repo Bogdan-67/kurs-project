@@ -64,7 +64,7 @@ module.exports = {
         'react/require-default-props': 'off',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'no-useless-escape': 'off',
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'max-len': ['warn', { code: 120, ignoreComments: true }],
         'react/jsx-no-useless-fragment': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
