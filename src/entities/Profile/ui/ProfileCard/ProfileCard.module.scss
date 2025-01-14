@@ -1,24 +1,24 @@
 .profileCard {
-  border: 2px solid var(--border-color);
-  padding: 30px;
-  border-radius: 4px;
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    border-radius: 4px;
 }
 
 .loading, .error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
 }
 
 .avatarWrapper {
-  text-align: center;
+    text-align: center;
 }
 
 .data {
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }
 
 .input {
@@ -26,5 +26,5 @@
 }
 
 .storybook {
-  width: 700px;
+    width: 700px;
 }

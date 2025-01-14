@@ -62,7 +62,7 @@ export const Input = memo((props: InputProps) => {
                 setWidth(placeholderRef.current.offsetWidth - 3);
             }, 120);
         }
-    }, [placeholderRef, isFocused, props]);
+    }, [placeholderRef, isFocused, props, value]);
 
     return (
         <div className={cls.container}>

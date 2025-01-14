@@ -1,6 +1,6 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .label {
@@ -8,20 +8,20 @@
 }
 
 .select {
-  background: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  transition: 0.2s ease;
-  background: var(--secondary-bg-color);
-  width: 100%;
-  cursor: pointer;
-
-  &:focus {
-    outline: var(--primary-color) solid 1px;
-    color: var(--inverted-bg-color);
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
     transition: 0.2s ease;
-  }
+    background: var(--secondary-bg-color);
+    width: 100%;
+    cursor: pointer;
+
+    &:focus {
+        outline: var(--primary-color) solid 1px;
+        color: var(--inverted-bg-color);
+        transition: 0.2s ease;
+    }
 }
 
 .option {
