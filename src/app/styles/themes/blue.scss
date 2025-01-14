@@ -1,0 +1,12 @@
+:root[data-theme="app_blue_theme"],
+.app_blue_theme {
+    --bg-color: #e9f3fc;
+    --secondary-bg-color: #fff;
+    --inverted-bg-color: #262626;
+    --primary-color: #0a8ffb;
+    --secondary-color: #3b3bfc;
+    --inverted-primary-color: #e9f3fc;
+    --inverted-secondary-color: #fff;
+    --border-color: transparent;
+    --header-color: var(--primary-color);
+}

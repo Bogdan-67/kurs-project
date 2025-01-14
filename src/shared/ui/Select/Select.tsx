@@ -28,11 +28,7 @@ export const Select = ({
 
     const optionsList = useMemo(() => {
         return options?.map((option) => (
-            <option
-                key={option.value}
-                value={option.value}
-                className={cls.option}
-            >
+            <option key={option.value} value={option.value} className="">
                 {option.label}
             </option>
         ));
@@ -46,7 +42,7 @@ export const Select = ({
 
     return (
         <div className={classNames(cls.wrapper, mods, [className])}>
-            {label && <span className={cls.label}>{label}</span>}
+            {label && <span className="">{label}</span>}
             <select
                 value={value}
                 className={cls.select}

@@ -3,12 +3,7 @@
     flex-direction: column;
 }
 
-.label {
-
-}
-
 .select {
-    background: none;
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid gray;
@@ -22,8 +17,4 @@
         color: var(--inverted-bg-color);
         transition: 0.2s ease;
     }
-}
-
-.option {
-
 }
