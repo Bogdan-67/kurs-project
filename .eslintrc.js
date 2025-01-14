@@ -75,7 +75,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'warn',
         'no-undef': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
-        'no-inferrable-types': 'warn',
+        '@typescript-eslint/no-inferrable-types': 'warn',
     },
     globals: {
         __IS_DEV__: true,
