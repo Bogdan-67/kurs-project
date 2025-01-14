@@ -3,16 +3,15 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import cls from './ProfileCard.module.scss';
-import { Profile } from '../../model/types/Profile';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
 
 import { Currency } from 'entities/Currency/model/types/currency';
 import { CurrencySelect } from 'entities/Currency';
 
 import { Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
+import { Profile } from '../../model/types/Profile';
+import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
@@ -77,7 +76,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
-                    title={t('ProfileError')}
+                    title={t('Ошибка при загрузке профиля')}
                 />
             </div>
         );

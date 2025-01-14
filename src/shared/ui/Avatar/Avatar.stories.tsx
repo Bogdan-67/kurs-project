@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import AvatarImg from './storybook.jpg';
+import AvatarImg from '../../assets/tests/storybook.jpg';
 import { CenterDecorator } from 'shared/config/storybook/CenterDecorator';
 
 const meta: Meta<typeof Avatar> = {
