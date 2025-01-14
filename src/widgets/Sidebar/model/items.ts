@@ -1,8 +1,7 @@
 import React from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import HomeIcon from 'shared/assets/icons/home.svg';
-import InfoIcon from 'shared/assets/icons/info-circle.svg';
-import ProfileIcon from 'shared/assets/icons/profile.svg';
+import { FaHouse, FaUser } from 'react-icons/fa6';
+import { FaInfoCircle } from 'react-icons/fa';
 
 export interface SidebarItemType {
     path: string;
@@ -14,17 +13,17 @@ export interface SidebarItemType {
 export const SidebarItemsList: SidebarItemType[] = [
     {
         path: RoutePath.main,
-        Icon: HomeIcon,
+        Icon: FaHouse,
         text: 'Главная',
     },
     {
         path: RoutePath.about,
-        Icon: InfoIcon,
+        Icon: FaInfoCircle,
         text: 'О сайте',
     },
     {
         path: RoutePath.profile,
-        Icon: ProfileIcon,
+        Icon: FaUser,
         text: 'Профиль',
         authOnly: true,
     },
