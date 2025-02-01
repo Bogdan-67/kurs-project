@@ -1,8 +1,10 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
     // Если не используем тайпскрипт - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
@@ -10,23 +12,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    isDev && require.resolve('react-refresh/babel'),
-                    [
-                        'i18next-extract',
-                        { locales: ['ru', 'en'], keyAsDefaultValue: true },
-                    ],
-                ].filter(Boolean),
-            },
-        },
-    };
+    const babelLoader = buildBabelLoader(options);
 
     const cssLoader = buildCssLoader(isDev);
 
