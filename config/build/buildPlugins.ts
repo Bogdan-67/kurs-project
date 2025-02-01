@@ -12,7 +12,7 @@ export function buildPlugins({
     project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
-        new webpack.ProgressPlugin(),
+        // new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
             template: paths.html,
         }),

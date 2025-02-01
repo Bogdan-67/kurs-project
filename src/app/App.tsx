@@ -6,12 +6,13 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { ErrorBoundary } from 'shared/ui/ErrorBoundary';
 import { PageError } from 'widgets/PageError';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from 'entities/User';
 
 const App = () => {
     const { theme } = useTheme();
     const dispatch = useDispatch();
+    const inited = useSelector(getUserInited);
 
     useEffect(() => {
         document.documentElement.dataset.theme = theme;
@@ -28,9 +29,11 @@ const App = () => {
                 <div className="content-page">
                     <Sidebar />
 
-                    <ErrorBoundary fallback={<PageError />}>
-                        <AppRouter />
-                    </ErrorBoundary>
+                    {inited && (
+                        <ErrorBoundary fallback={<PageError />}>
+                            <AppRouter />
+                        </ErrorBoundary>
+                    )}
                 </div>
             </Suspense>
         </div>
