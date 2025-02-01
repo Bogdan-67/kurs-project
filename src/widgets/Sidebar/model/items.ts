@@ -1,6 +1,6 @@
 import React from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { FaHouse, FaUser } from 'react-icons/fa6';
+import { FaHouse, FaUser, FaNewspaper } from 'react-icons/fa6';
 import { FaInfoCircle } from 'react-icons/fa';
 
 export interface SidebarItemType {
@@ -26,5 +26,10 @@ export const SidebarItemsList: SidebarItemType[] = [
         Icon: FaUser,
         text: 'Профиль',
         authOnly: true,
+    },
+    {
+        path: RoutePath.articles,
+        Icon: FaNewspaper,
+        text: 'Статьи',
     },
 ];
